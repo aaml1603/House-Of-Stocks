@@ -52,7 +52,7 @@ export function HeroSection() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 Master the Markets with
                 <span className="block text-green-600 mt-2">
-                  Elite Trading Insights
+                  House of Stocks
                 </span>
               </h1>
 
