@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { getStockIcon } from "./stock-icons"
 
 const stockData = [
   { symbol: "AAPL", price: "$192.53", change: "+2.45", changePercent: "+1.29%" },
@@ -22,9 +23,9 @@ const duplicatedStocks = [...stockData, ...stockData]
 
 export function StockTicker() {
   return (
-    <section className="w-full bg-gradient-to-r from-green-50 via-white to-emerald-50 border-y border-gray-200 py-6 overflow-hidden relative">
+    <section className="w-full bg-gradient-to-r from-green-50 via-white to-emerald-50 border-y border-gray-200 py-4 sm:py-6 overflow-hidden relative">
       {/* Background gradient overlay for fade effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white z-10 pointer-events-none" />
+      <div className="absoluteç inset-0 bg-gradient-to-r from-white via-transparent to-white z-10 pointer-events-none" />
       
       {/* Subtle animated background pattern */}
       <motion.div 
@@ -33,7 +34,7 @@ export function StockTicker() {
           backgroundPosition: ["0% 0%", "100% 100%"]
         }}
         transition={{
-          duration: 30,
+          duration: 12,
           repeat: Infinity,
           ease: "linear"
         }}
@@ -44,7 +45,7 @@ export function StockTicker() {
       />
       
       {/* Header */}
-      <div className="container mx-auto px-4 mb-4">
+      <div className="container mx-auto px-4 mb-3 sm:mb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <motion.div
@@ -56,10 +57,6 @@ export function StockTicker() {
                 <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
               </svg>
             </motion.div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900">Live Market Data</h3>
-              <p className="text-sm text-gray-600">Real-time trading insights</p>
-            </div>
           </div>
           
           {/* Live indicator */}
@@ -83,7 +80,7 @@ export function StockTicker() {
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: 60,
+            duration: 30,
             ease: "linear"
           }
         }}
@@ -91,7 +88,7 @@ export function StockTicker() {
         {duplicatedStocks.map((stock, index) => (
           <motion.div
             key={`${stock.symbol}-${index}`}
-            className="flex items-center space-x-4 px-6 py-3 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-200/50 shadow-sm"
+            className="flex items-center space-x-2 sm:space-x-4 px-3 sm:px-6 py-2 sm:py-3 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-200/50 shadow-sm"
             whileHover={{ 
               scale: 1.02,
               y: -2,
@@ -101,9 +98,12 @@ export function StockTicker() {
           >
             <div className="flex items-center space-x-3">
               {/* Stock symbol with icon */}
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-xs font-bold text-primary">{stock.symbol.slice(0, 2)}</span>
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 flex items-center justify-center">
+                  {(() => {
+                    const IconComponent = getStockIcon(stock.symbol);
+                    return <IconComponent className="w-8 h-8" />;
+                  })()}
                 </div>
                 <div>
                   <span className="font-bold text-gray-900">${stock.symbol}</span>

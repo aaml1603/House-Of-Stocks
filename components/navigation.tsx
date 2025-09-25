@@ -88,9 +88,11 @@ export function Navigation() {
             transition={{ delay: 0.6, duration: 0.6 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-[#5865F2] hover:bg-[#4752C4]">
-                <MessageCircle className="mr-2 h-4 w-4" />
-                Join Discord
+              <Button className="bg-green-600 hover:bg-green-700" asChild>
+                <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  Join Discord
+                </a>
               </Button>
             </motion.div>
           </motion.div>
@@ -177,9 +179,11 @@ export function Navigation() {
                     visible: { opacity: 1, x: 0 }
                   }}
                 >
-                  <Button className="w-full justify-center bg-[#5865F2] hover:bg-[#4752C4]">
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                    Join Discord
+                  <Button className="w-full justify-center bg-green-600 hover:bg-green-700" asChild>
+                    <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Join Discord
+                    </a>
                   </Button>
                 </motion.div>
               </motion.div>

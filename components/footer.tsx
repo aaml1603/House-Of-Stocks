@@ -1,12 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Twitter, Linkedin, Youtube, Mail } from "lucide-react"
+import { MessageCircle, TrendingUp, Users, Shield } from "lucide-react"
 
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -17,104 +17,65 @@ export function Footer() {
                 height={48}
                 className="h-12 w-12"
               />
-              <span className="font-bold text-xl text-white">House of Stocks</span>
+              <span className="font-bold text-lg sm:text-xl text-white">House of Stocks</span>
             </div>
             <p className="text-sm">
-              Your premier destination for professional trading insights and community-driven success.
+              Join our exclusive Discord trading community where professional traders share real-time insights and proven strategies.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Mail className="h-5 w-5" />
+            <div className="flex items-center space-x-2">
+              <MessageCircle className="h-5 w-5 text-[#5865F2]" />
+              <Link 
+                href="https://discord.gg/z6FA8DHf53" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#5865F2] hover:text-[#4752C4] transition-colors font-medium"
+              >
+                Join Discord Community
               </Link>
             </div>
           </div>
 
-          {/* Product */}
+          {/* Community */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Product</h3>
+            <h3 className="font-semibold text-white mb-4">Community</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="#features" className="hover:text-primary transition-colors">
-                  Features
+                  Trading Features
                 </Link>
               </li>
               <li>
-                <Link href="#pricing" className="hover:text-primary transition-colors">
-                  Pricing
+                <Link href="#testimonials" className="hover:text-primary transition-colors">
+                  Member Reviews
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  API Access
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Mobile App
+                <Link href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  Discord Server
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Trading Resources */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <h3 className="font-semibold text-white mb-4">Trading Resources</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  About Us
-                </Link>
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
+                <TrendingUp className="h-4 w-4 text-primary" />
+                <span className="text-sm">Real-time Market Analysis</span>
               </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Blog
-                </Link>
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
+                <Users className="h-4 w-4 text-primary" />
+                <span className="text-sm">Expert Trading Community</span>
               </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Careers
-                </Link>
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
+                <Shield className="h-4 w-4 text-primary" />
+                <span className="text-sm">Risk Management Tools</span>
               </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Support</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Community Forum
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Trading Guides
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Status
-                </Link>
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
+                <MessageCircle className="h-4 w-4 text-primary" />
+                <span className="text-sm">24/7 Discord Support</span>
               </li>
             </ul>
           </div>
@@ -124,14 +85,14 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2024 House of Stocks. All rights reserved.
+              © 2024 House of Stocks Trading Community. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-sm hover:text-primary transition-colors">
-                Privacy Policy
+                Community Guidelines
               </Link>
               <Link href="#" className="text-sm hover:text-primary transition-colors">
-                Terms of Service
+                Trading Disclaimer
               </Link>
               <Link href="#" className="text-sm hover:text-primary transition-colors">
                 Risk Disclosure

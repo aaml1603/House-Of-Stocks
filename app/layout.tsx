@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description: "Join the most exclusive stock trading community. Get expert insights, real-time analysis, and connect with successful traders.",
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: {

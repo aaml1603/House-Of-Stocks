@@ -63,7 +63,7 @@ const cardVariants = {
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
+    <section id="pricing" className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-12"
@@ -72,15 +72,15 @@ export function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Choose Your <span className="text-primary">Trading Plan</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
             Select the perfect plan for your trading needs. Upgrade or downgrade anytime.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-0">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -110,7 +110,7 @@ export function PricingSection() {
                 )}
                 
                 <CardHeader>
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                  <CardTitle className="text-xl sm:text-2xl">{plan.name}</CardTitle>
                   <CardDescription>{plan.description}</CardDescription>
                 </CardHeader>
                 
@@ -122,7 +122,7 @@ export function PricingSection() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                   >
-                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-3xl sm:text-4xl font-bold">{plan.price}</span>
                     <span className="text-gray-600">{plan.period}</span>
                   </motion.div>
                   
@@ -153,11 +153,14 @@ export function PricingSection() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button
-                      className={`w-full ${plan.popular ? 'bg-[#5865F2] hover:bg-[#4752C4]' : ''}`}
+                      className={`w-full ${plan.popular ? 'bg-green-600 hover:bg-green-700' : ''}`}
                       variant={plan.popular ? "default" : "outline"}
+                      asChild
                     >
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      Join Discord
+                      <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
+                        <MessageCircle className="mr-2 h-4 w-4" />
+                        Join Discord
+                      </a>
                     </Button>
                   </motion.div>
                 </CardFooter>
