@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "House of Stocks - Your Premier Trading Community",
   description: "Join the most exclusive stock trading community. Get expert insights, real-time analysis, and connect with successful traders.",
+  icons: {
+    icon: "/browserlogo.png",
+    shortcut: "/browserlogo.png",
+    apple: "/browserlogo.png",
+  },
 }
 
 export const viewport = {

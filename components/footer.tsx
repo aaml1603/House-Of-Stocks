@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Image 
-                src="/logo.png" 
+                src="/browserlogo.png" 
                 alt="House of Stocks Logo" 
                 width={48} 
                 height={48}
@@ -85,7 +85,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2024 House of Stocks Trading Community. All rights reserved.
+              © 2025 House of Stocks Trading Community. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-sm hover:text-primary transition-colors">

@@ -38,11 +38,11 @@ export function Navigation() {
                 transition={{ duration: 0.2 }}
               >
                 <Image 
-                  src="/logo.png" 
+                  src="/browserlogo.png" 
                   alt="House of Stocks Logo" 
-                  width={48} 
-                  height={48}
-                  className="h-12 w-12"
+                  width={64} 
+                  height={64}
+                  className="h-16 w-16"
                 />
               </motion.div>
               <span className="font-bold text-xl">House of Stocks</span>
