@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MessageCircle, TrendingUp } from "lucide-react"
 import Image from "next/image"
+import { BackgroundPaths } from "@/components/ui/shadcn-io/background-paths"
 
 // Discord SVG Icon component
 const DiscordIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) => (
@@ -26,15 +27,15 @@ const DiscordIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) =
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-white to-emerald-50 pt-20 pb-16 sm:pt-24 sm:pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950 md:pt-20 lg:pt-0">
       
-      {/* Subtle background decoration */}
+      {/* BackgroundPaths animated background */}
       <div className="absolute inset-0">
-        <div className="absolute top-40 left-10 w-96 h-96 bg-green-100 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-emerald-100 rounded-full opacity-30 blur-3xl"></div>
+        <BackgroundPaths title="" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Hero content overlay */}
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           
           {/* Two-column layout for desktop */}
