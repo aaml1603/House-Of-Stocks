@@ -4,24 +4,24 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Michael Chen",
-    role: "Day Trader",
+    name: "Alex Thompson",
+    role: "Community Member",
     image: "https://i.pravatar.cc/150?img=1",
-    content: "House of Stocks transformed my trading game. The real-time alerts and community insights helped me increase my portfolio by 40% in just 6 months.",
+    content: "I joined as a complete beginner and was amazed by how welcoming everyone was. No question was too basic, and people actually took time to help me understand the markets.",
     rating: 5
   },
   {
-    name: "Sarah Williams",
-    role: "Portfolio Manager",
+    name: "Maria Garcia",
+    role: "Active Trader",
     image: "https://i.pravatar.cc/150?img=2",
-    content: "The AI predictions are incredibly accurate. I've never had access to such sophisticated tools at this price point. It's a game-changer for serious traders.",
+    content: "The best part about this community is the genuine support. We celebrate each other's wins and learn from losses together. It's like having trading friends who truly care.",
     rating: 5
   },
   {
-    name: "David Rodriguez",
-    role: "Swing Trader",
+    name: "James Wilson",
+    role: "Long-term Investor",
     image: "https://i.pravatar.cc/150?img=3",
-    content: "The community aspect is what sets House of Stocks apart. Learning from experienced traders and sharing strategies has accelerated my growth exponentially.",
+    content: "Finally found a trading community without the sales pressure! Just real people sharing knowledge and experiences. The casual conversations are just as valuable as the trading discussions.",
     rating: 5
   }
 ]
@@ -32,10 +32,10 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Trusted by <span className="text-green-600">Thousands of Traders</span>
+            What Our <span className="text-green-600">Community Says</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don&apos;t just take our word for it. Here&apos;s what our community members have to say.
+            Hear from real members about their experience in our supportive trading community.
           </p>
         </div>
 
@@ -84,10 +84,10 @@ export function TestimonialsSection() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "10,000+", label: "Active Traders" },
-            { value: "$2.5B+", label: "Trading Volume" },
-            { value: "95%", label: "Success Rate" },
-            { value: "24/7", label: "Support" }
+            { value: "2,500+", label: "Community Members" },
+            { value: "500+", label: "Daily Messages" },
+            { value: "100%", label: "Welcoming Vibes" },
+            { value: "24/7", label: "Active Community" }
           ].map((stat, index) => (
             <div key={index} className="group">
               <div className="text-3xl sm:text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-200">

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, MessageCircle, TrendingUp } from "lucide-react"
+import { ArrowRight, MessageCircle, TrendingUp, Users } from "lucide-react"
 import Image from "next/image"
 import { BackgroundPaths } from "@/components/ui/shadcn-io/background-paths"
 
@@ -45,13 +45,13 @@ export function HeroSection() {
             <div className="text-center lg:text-left">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <TrendingUp className="h-4 w-4" />
-                #1 Trading Community
+                <Users className="h-4 w-4" />
+                New Trading Community
               </div>
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Master the Markets with
+                Welcome to
                 <span className="block text-green-600 mt-2">
                   House of Stocks
                 </span>
@@ -59,8 +59,8 @@ export function HeroSection() {
 
               {/* Subheadline */}
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                Join the most exclusive trading community where professional traders share real-time analysis, 
-                proven strategies, and market-moving insights.
+                We're just getting started! Join us in building a welcoming space where traders can connect, learn, and grow together. 
+                No sales pitches, just genuine people who love trading.
               </p>
 
               {/* CTA Button */}
@@ -72,7 +72,7 @@ export function HeroSection() {
                 >
                   <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
                     <DiscordIcon className="mr-2 h-5 w-5" />
-                    Join our Community
+                    Join Our Discord
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                   </a>
                 </Button>

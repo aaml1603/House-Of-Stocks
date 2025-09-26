@@ -1,37 +1,37 @@
 "use client"
 
-import { TrendingUp, Brain, Users, Zap, Shield, BarChart } from "lucide-react"
+import { Users, MessageSquare, Heart, BookOpen, Coffee, Handshake } from "lucide-react"
 
 const features = [
   {
-    icon: TrendingUp,
-    title: "Real-Time Market Analysis",
-    description: "Get instant insights with our advanced algorithms tracking thousands of stocks every second."
-  },
-  {
-    icon: Brain,
-    title: "AI-Powered Predictions",
-    description: "Leverage machine learning models trained on decades of market data for smarter trading decisions."
-  },
-  {
     icon: Users,
-    title: "Expert Community",
-    description: "Connect with verified professional traders and learn from their strategies and experiences."
+    title: "Supportive Community",
+    description: "Connect with traders of all experience levels in a judgment-free environment where questions are always welcome."
   },
   {
-    icon: Zap,
-    title: "Lightning Fast Alerts",
-    description: "Never miss an opportunity with instant notifications for price movements and trading signals."
+    icon: MessageSquare,
+    title: "Open Discussions",
+    description: "Share your wins, losses, and learning experiences. Our community thrives on honest conversations about trading."
   },
   {
-    icon: Shield,
-    title: "Risk Management Tools",
-    description: "Protect your portfolio with advanced stop-loss strategies and position sizing calculators."
+    icon: Heart,
+    title: "Mentorship Culture",
+    description: "Experienced traders naturally mentor newcomers, creating a positive cycle of knowledge sharing and growth."
   },
   {
-    icon: BarChart,
-    title: "Comprehensive Analytics",
-    description: "Track your performance with detailed reports, charts, and portfolio analysis tools."
+    icon: BookOpen,
+    title: "Collaborative Learning",
+    description: "Learn together through shared resources, study groups, and community-driven educational content."
+  },
+  {
+    icon: Coffee,
+    title: "Casual Atmosphere",
+    description: "Beyond trading talk, enjoy casual conversations, memes, and build genuine friendships with fellow traders."
+  },
+  {
+    icon: Handshake,
+    title: "No Sales Pressure",
+    description: "A community focused on mutual support and learning, not selling courses or pushing paid services."
   }
 ]
 
@@ -41,11 +41,11 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything You Need to
-            <span className="block text-green-600 mt-2"> Succeed in Trading</span>
+            What Makes Our
+            <span className="block text-green-600 mt-2"> Community Special</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our platform combines cutting-edge technology with community wisdom to give you an unmatched trading edge.
+            We've built a space where traders can genuinely connect, learn, and grow together without the pressure of sales or competition.
           </p>
         </div>
 

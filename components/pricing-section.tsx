@@ -5,48 +5,49 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check, MessageCircle } from "lucide-react"
 import { motion } from "framer-motion"
 
-const plans = [
+const communityAccess = [
   {
-    name: "Starter",
-    price: "$49",
-    period: "/month",
-    description: "Perfect for beginners starting their trading journey",
+    name: "Community Member",
+    price: "Free",
+    period: "Forever",
+    description: "Join our welcoming trading community at no cost",
     features: [
-      "Access to community forums",
-      "Basic market analysis tools",
-      "Daily market summaries",
-      "Mobile app access",
-      "Email support"
-    ],
-    popular: false
-  },
-  {
-    name: "Professional",
-    price: "$149",
-    period: "/month",
-    description: "For serious traders who want advanced features",
-    features: [
-      "Everything in Starter",
-      "Real-time market alerts",
-      "AI-powered predictions",
-      "Advanced charting tools",
-      "Priority support",
-      "Monthly strategy webinars"
+      "Full Discord server access",
+      "Daily market discussions",
+      "Share trades and strategies",
+      "Learn from experienced traders",
+      "Participate in community events",
+      "Access to educational resources"
     ],
     popular: true
   },
   {
-    name: "Elite",
-    price: "$299",
+    name: "Premium Supporter",
+    price: "$15",
     period: "/month",
-    description: "Complete access for professional traders",
+    description: "Support the community and get exclusive perks",
     features: [
-      "Everything in Professional",
-      "1-on-1 mentorship sessions",
-      "Custom trading algorithms",
-      "Institutional-grade tools",
-      "API access",
-      "White-glove support"
+      "Everything in Community",
+      "Exclusive premium channels",
+      "Early access to events",
+      "Custom Discord role",
+      "Priority in Q&A sessions",
+      "Support community growth"
+    ],
+    popular: false
+  },
+  {
+    name: "Community Champion",
+    price: "$50",
+    period: "/month",
+    description: "Become a champion of our growing community",
+    features: [
+      "Everything in Premium",
+      "Help shape community direction",
+      "Access to private mentorship group",
+      "Monthly 1-on-1 with moderators",
+      "Special recognition",
+      "Exclusive community merchandise"
     ],
     popular: false
   }
@@ -73,15 +74,15 @@ export function PricingSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Choose Your <span className="text-primary">Trading Plan</span>
+            Join Our <span className="text-primary">Trading Community</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
-            Select the perfect plan for your trading needs. Upgrade or downgrade anytime.
+            Start with free access to our community. Support us if you'd like to help us grow and get some perks!
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-0">
-          {plans.map((plan, index) => (
+          {communityAccess.map((plan, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
@@ -159,7 +160,7 @@ export function PricingSection() {
                     >
                       <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="mr-2 h-4 w-4" />
-                        Join Discord
+                        {plan.price === "Free" ? "Join for Free" : "Join & Support"}
                       </a>
                     </Button>
                   </motion.div>
@@ -177,7 +178,7 @@ export function PricingSection() {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <p className="text-gray-600">
-            All plans include a <span className="font-semibold">14-day money-back guarantee</span>
+            Join our Discord for <span className="font-semibold">free</span> and see what makes our community special!
           </p>
         </motion.div>
       </div>
