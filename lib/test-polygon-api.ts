@@ -1,37 +1,40 @@
 // Test script to verify Polygon.io API integration
 // Run this in the browser console or as a Node.js script
 
-import { getAllStockData, getStockQuote, getStockTicker } from './stock-service';
+import { getAllStockData, stockDataService } from './stock-service';
 
 export async function testPolygonAPI() {
-  console.log('🧪 Testing Polygon.io API Integration...\n');
+  console.log('🧪 Testing Stock Data Service Integration...\n');
 
   try {
-    // Test 1: Get a single stock quote
-    console.log('📊 Test 1: Fetching AAPL quote...');
-    const appleQuote = await getStockQuote('AAPL');
-    console.log('✅ AAPL Quote:', appleQuote);
+    // Test 1: Check if service is connected
+    console.log('📊 Test 1: Checking connection status...');
+    const isConnected = stockDataService.isConnectedToServer();
+    console.log('✅ Connection Status:', isConnected ? 'Connected' : 'Disconnected');
     console.log('');
 
-    // Test 2: Get stock ticker info
-    console.log('📈 Test 2: Fetching AAPL ticker info...');
-    const appleTicker = await getStockTicker('AAPL');
-    console.log('✅ AAPL Ticker Info:', appleTicker);
+    // Test 2: Get current stock data
+    console.log('📈 Test 2: Fetching current stock data...');
+    const currentData = stockDataService.getCurrentData();
+    console.log('✅ Current Data Count:', currentData.length);
+    if (currentData.length > 0) {
+      console.log('✅ Sample Stock Data:', currentData.slice(0, 3));
+    }
     console.log('');
 
-    // Test 3: Get all stock data
-    console.log('📊 Test 3: Fetching all stock data...');
+    // Test 3: Get all stock data (legacy function)
+    console.log('📊 Test 3: Fetching all stock data via legacy function...');
     const allStocks = await getAllStockData();
     console.log('✅ All Stocks Count:', allStocks.length);
     console.log('✅ Sample Stock Data:', allStocks.slice(0, 3));
     console.log('');
 
     console.log('🎉 All tests completed successfully!');
-    console.log('💡 Note: Using prevClose API + simulated variations for demo');
+    console.log('💡 Note: Using WebSocket connection to Cloudflare Workers');
     return {
       success: true,
-      appleQuote,
-      appleTicker,
+      isConnected,
+      currentDataCount: currentData.length,
       allStocksCount: allStocks.length,
       sampleData: allStocks.slice(0, 3)
     };
