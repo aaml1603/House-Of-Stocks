@@ -27,7 +27,7 @@ const DiscordIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) =
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950 md:pt-20 lg:pt-0">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950 pt-16 md:pt-20 lg:pt-0">
       
       {/* BackgroundPaths animated background */}
       <div className="absolute inset-0">
