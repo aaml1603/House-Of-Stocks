@@ -179,7 +179,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
         className={cn(
           'fixed top-0 z-50 w-full transition-all duration-300 ease-in-out [&_*]:no-underline',
           isScrolled 
-            ? 'bg-background/95 supports-[backdrop-filter]:bg-background/0' 
+            ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' 
             : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
           className
         )}
