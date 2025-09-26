@@ -1,0 +1,19 @@
+{
+  "name": "stock-data-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for broadcasting live stock data from Alpaca API",
+  "main": "websocket-server.js",
+  "scripts": {
+    "start": "node websocket-server.js",
+    "dev": "nodemon websocket-server.js"
+  },
+  "dependencies": {
+    "ws": "^8.14.2",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

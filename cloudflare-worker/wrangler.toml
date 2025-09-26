@@ -1,0 +1,28 @@
+name = "stock-websocket-server"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Durable Object bindings
+[[durable_objects.bindings]]
+name = "STOCK_ROOM"
+class_name = "StockRoom"
+
+# Durable Objects migrations (required for first deployment)
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["StockRoom"]
+
+# Environment variables (set via wrangler secret put)
+[vars]
+# Add your API keys via: wrangler secret put ALPACA_API_KEY
+# wrangler secret put ALPACA_API_SECRET
+# wrangler secret put POLYGON_API_KEY
+
+# Optional: Custom domain
+# [env.production]
+# route = "wss://stocks.yourdomain.com/*"
+
+# Development settings
+[env.development]
+vars = { ENVIRONMENT = "development" }
