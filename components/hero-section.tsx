@@ -59,7 +59,7 @@ export function HeroSection() {
 
               {/* Subheadline */}
               <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                We're just getting started! Join us in building a welcoming space where traders can connect, learn, and grow together. 
+                We&apos;re just getting started! Join us in building a welcoming space where traders can connect, learn, and grow together. 
                 No sales pitches, just genuine people who love trading.
               </p>
 

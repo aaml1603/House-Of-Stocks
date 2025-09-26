@@ -45,7 +45,7 @@ export function FeaturesSection() {
             <span className="block text-green-600 mt-2"> Community Special</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We've built a space where traders can genuinely connect, learn, and grow together without the pressure of sales or competition.
+            We&apos;ve built a space where traders can genuinely connect, learn, and grow together without the pressure of sales or competition.
           </p>
         </div>
 

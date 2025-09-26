@@ -77,7 +77,7 @@ export function PricingSection() {
             Join Our <span className="text-primary">Trading Community</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
-            Start with free access to our community. Support us if you'd like to help us grow and get some perks!
+            Start with free access to our community. Support us if you&apos;d like to help us grow and get some perks!
           </p>
         </motion.div>
 

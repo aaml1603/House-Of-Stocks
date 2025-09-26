@@ -85,7 +85,7 @@ export function CommunityStories() {
             Our <span className="text-green-600">Vision</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            What we're building and why we think the trading community deserves something better.
+            What we&apos;re building and why we think the trading community deserves something better.
           </p>
         </div>
 
@@ -115,10 +115,10 @@ export function CommunityStories() {
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm">
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              What's Waiting in Our Discord
+              What&apos;s Waiting in Our Discord
             </h3>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We've set up channels for different types of conversations. Come help us bring them to life!
+              We&apos;ve set up channels for different types of conversations. Come help us bring them to life!
             </p>
           </div>
           

@@ -38,7 +38,7 @@ export function CommunityHighlights() {
             Help Us Build <span className="text-green-600">Something Special</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We're creating a different kind of trading community - one focused on genuine connections and real learning, not sales or hype.
+            We&apos;re creating a different kind of trading community - one focused on genuine connections and real learning, not sales or hype.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function CommunityHighlights() {
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              What We're Building Together
+              What We&apos;re Building Together
             </h3>
             <p className="text-gray-600 text-lg">
               Our vision for creating the most welcoming trading community
@@ -103,7 +103,7 @@ export function CommunityHighlights() {
               Be One of Our First Members!
             </h3>
             <p className="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
-              We're just getting started and looking for genuine people who want to build something special together. 
+              We&apos;re just getting started and looking for genuine people who want to build something special together. 
               Join us on Discord and help shape what this community becomes!
             </p>
             <a
