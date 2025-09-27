@@ -26,6 +26,7 @@ const config: Config = {
   	extend: {
   		fontFamily: {
   			sans: [
+  				'Inter',
   				'Open Sans',
   				'system-ui',
   				'sans-serif'

@@ -34,34 +34,34 @@ const communityValues = [
 
 export function CommunityHighlights() {
   return (
-    <section id="community" className="py-20 bg-white">
+    <section id="community" className="py-24 bg-gradient-to-b from-white to-slate-50/50">
       <div className="container mx-auto px-4">
         
         {/* Main highlights */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Help Us Build <span className="text-green-600">Something Special</span>
+        <div className="text-center mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight tracking-[-0.02em]">
+            Help Us Build <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">Something Special</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
             We&apos;re creating a different kind of trading community - one focused on genuine connections and real learning, not sales or hype.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {highlights.map((highlight, index) => {
             const Icon = highlight.icon
             return (
               <div
                 key={index}
-                className="group bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300 border border-gray-100 text-center"
+                className="group bg-white rounded-3xl p-8 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 border border-slate-200/60 text-center hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-green-200 transition-colors duration-300">
-                  <Icon className="h-8 w-8 text-green-600" />
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:from-emerald-200 group-hover:to-green-200 transition-all duration-300 shadow-sm">
+                  <Icon className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-[-0.01em]">
                   {highlight.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed font-medium">
                   {highlight.description}
                 </p>
               </div>
@@ -70,28 +70,28 @@ export function CommunityHighlights() {
         </div>
 
         {/* Community Values */}
-        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        <div className="bg-gradient-to-br from-emerald-50/60 via-green-50/40 to-teal-50/60 rounded-3xl p-10 md:p-16 border border-emerald-100/50 shadow-xl shadow-emerald-500/5">
+          <div className="text-center mb-16">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-[-0.02em]">
               What We&apos;re Building Together
             </h3>
-            <p className="text-gray-600 text-lg">
+            <p className="text-slate-600 text-lg font-medium max-w-2xl mx-auto">
               Our vision for creating the most welcoming trading community
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {communityValues.map((value, index) => {
               const Icon = value.icon
               return (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                    <Icon className="h-8 w-8 text-green-600" />
+                <div key={index} className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:from-emerald-200 group-hover:to-green-200 transition-all duration-300 shadow-sm">
+                    <Icon className="h-8 w-8 text-emerald-600" />
                   </div>
-                  <div className="text-lg font-semibold text-gray-900 mb-2">
+                  <div className="text-lg font-semibold text-slate-900 mb-3 tracking-[-0.01em]">
                     {value.label}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-slate-600 leading-relaxed font-medium">
                     {value.description}
                   </div>
                 </div>
@@ -101,25 +101,30 @@ export function CommunityHighlights() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-green-600 rounded-2xl p-8 md:p-12 text-white">
-            <Coffee className="h-12 w-12 mx-auto mb-6 text-green-200" />
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Be One of Our First Members!
-            </h3>
-            <p className="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
-              We&apos;re just getting started and looking for genuine people who want to build something special together. 
-              Join us on Discord and help shape what this community becomes!
-            </p>
-            <a
-              href="https://discord.gg/z6FA8DHf53"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 text-lg"
-            >
-              <MessageCircle className="h-5 w-5" />
-              Join Our Discord
-            </a>
+        <div className="text-center mt-20">
+          <div className="bg-gradient-to-br from-emerald-600 via-green-600 to-teal-600 rounded-3xl p-10 md:p-16 text-white shadow-2xl shadow-emerald-500/25 border border-emerald-500/20 relative overflow-hidden">
+            {/* Background pattern */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-20"></div>
+
+            <div className="relative z-10">
+              <Coffee className="h-14 w-14 mx-auto mb-8 text-emerald-200" />
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-[-0.02em]">
+                Be One of Our First Members!
+              </h3>
+              <p className="text-lg md:text-xl mb-10 text-emerald-100 max-w-2xl mx-auto leading-relaxed font-medium">
+                We&apos;re just getting started and looking for genuine people who want to build something special together.
+                Join us on Discord and help shape what this community becomes!
+              </p>
+              <a
+                href="https://discord.gg/z6FA8DHf53"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-white text-emerald-600 px-10 py-5 rounded-xl font-semibold hover:bg-slate-50 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1"
+              >
+                <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+                Join Our Discord
+              </a>
+            </div>
           </div>
         </div>
       </div>

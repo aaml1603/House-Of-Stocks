@@ -27,7 +27,7 @@ const DiscordIcon = ({ className, ...props }: React.SVGAttributes<SVGElement>) =
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950 pt-16 md:pt-20 lg:pt-0">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 dark:bg-neutral-950 pt-16 md:pt-20 lg:pt-0">
       
       {/* BackgroundPaths animated background */}
       <div className="absolute inset-0">
@@ -44,36 +44,38 @@ export function HeroSection() {
             {/* Left column - Content */}
             <div className="text-center lg:text-left">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/60 text-emerald-700 px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-sm">
                 <Users className="h-4 w-4" />
                 New Trading Community
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-[1.1] tracking-[-0.02em]">
                 Welcome to
-                <span className="block text-green-600 mt-2">
+                <span className="block text-emerald-600 mt-2 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
                   House of Stocks
                 </span>
               </h1>
 
               {/* Subheadline */}
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                We&apos;re just getting started! Join us in building a welcoming space where traders can connect, learn, and grow together. 
-                Get free daily trading alerts and join genuine people who love trading - no sales pitches.
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                We&apos;re just getting started! Join us in building a welcoming space where traders can connect, learn, and grow together.
+                <span className="block mt-3 text-slate-500 text-lg sm:text-xl font-normal">
+                  Get free daily trading alerts and join genuine people who love trading - no sales pitches.
+                </span>
               </p>
 
               {/* CTA Button */}
               <div className="flex justify-center lg:justify-start mb-12">
-                <Button 
-                  size="lg" 
-                  className="group bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white px-10 py-5 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-emerald-500/25 transition-all duration-300 border border-emerald-600/20"
                   asChild
                 >
                   <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
-                    <DiscordIcon className="mr-2 h-5 w-5" />
+                    <DiscordIcon className="mr-3 h-5 w-5" />
                     Join Our Discord
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </Button>
               </div>
@@ -83,17 +85,18 @@ export function HeroSection() {
             {/* Right column - Trading Phone Mockup */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Subtle glow effect behind the phone */}
-                <div className="absolute inset-0 bg-gradient-to-r from-green-200 to-emerald-200 rounded-3xl blur-2xl opacity-30 scale-110"></div>
-                
-                {/* Phone image */}
-                <div className="relative z-10">
+                {/* Enhanced glow effect behind the phone */}
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-200/60 via-green-200/40 to-teal-200/60 rounded-3xl blur-3xl opacity-40 scale-110 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-green-100 rounded-3xl blur-xl opacity-20 scale-105"></div>
+
+                {/* Phone image with enhanced styling */}
+                <div className="relative z-10 transform hover:scale-105 transition-transform duration-500">
                   <Image
                     src="/trading_phone.png"
                     alt="Trading App Mockup"
                     width={400}
                     height={600}
-                    className="w-auto h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg drop-shadow-2xl"
+                    className="w-auto h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg drop-shadow-2xl rounded-3xl"
                     priority
                   />
                 </div>

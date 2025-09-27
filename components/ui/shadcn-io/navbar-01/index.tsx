@@ -286,7 +286,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
           )}>
             <Button
               className={cn(
-                "font-medium rounded-md shadow-sm bg-green-600 hover:bg-green-700 flex items-center transition-all duration-300 shrink-0",
+                "font-semibold rounded-xl shadow-sm bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 hover:shadow-md hover:shadow-emerald-500/25 flex items-center transition-all duration-300 shrink-0",
                 isScrolled ? "p-2 h-8 w-8" : "px-4 h-9 text-sm gap-2"
               )}
               onClick={(e) => {
