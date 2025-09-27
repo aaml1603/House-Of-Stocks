@@ -1,8 +1,13 @@
 "use client"
 
-import { Users, MessageCircle, TrendingUp, Heart, Coffee, BookOpen, Sprout, Handshake, Lightbulb, Gift } from "lucide-react"
+import { Users, MessageCircle, TrendingUp, Heart, Coffee, BookOpen, Sprout, Handshake, Lightbulb, Gift, Bell } from "lucide-react"
 
 const highlights = [
+  {
+    icon: Bell,
+    title: "Free Trading Alerts",
+    description: "Get daily trading alerts and market insights shared by our community members - completely free, no strings attached."
+  },
   {
     icon: MessageCircle,
     title: "Daily Market Chat",
@@ -42,7 +47,7 @@ export function CommunityHighlights() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {highlights.map((highlight, index) => {
             const Icon = highlight.icon
             return (

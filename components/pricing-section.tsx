@@ -13,6 +13,7 @@ const communityAccess = [
     description: "Join our welcoming trading community at no cost",
     features: [
       "Full Discord server access",
+      "Free daily trading alerts",
       "Daily market discussions",
       "Share trades and strategies",
       "Learn from experienced traders",
