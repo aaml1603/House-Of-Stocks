@@ -6,10 +6,10 @@ import { TrendingUp, AlertCircle, Wifi, WifiOff } from "lucide-react"
 import { stockDataService, fallbackStockData, type StockData } from "../lib/stock-service"
 
 export function StockTicker() {
-  const [stockData, setStockData] = useState<StockData[]>(fallbackStockData)
+  const [stockData, setStockData] = useState<StockData[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isConnected, setIsConnected] = useState(false)
-  const [lastUpdateTime, setLastUpdateTime] = useState<Date>(new Date())
+  const [lastUpdateTime, setLastUpdateTime] = useState<Date | null>(null)
 
   // Subscribe to real-time stock data updates
   useEffect(() => {
@@ -23,17 +23,21 @@ export function StockTicker() {
 
     const unsubscribeConnection = stockDataService.subscribeToConnection((connected: boolean) => {
       setIsConnected(connected)
-      if (!connected && isLoading) {
-        // If not connected and still loading, use fallback data
-        setStockData(fallbackStockData)
-        setIsLoading(false)
-      }
     })
 
-    // Check if we already have data
+    // Check if we already have data (from localStorage or WebSocket)
     const currentData = stockDataService.getCurrentData()
     if (currentData.length > 0) {
       setStockData(currentData)
+      setIsLoading(false)
+      // Get the saved timestamp from localStorage
+      const savedTimestamp = localStorage.getItem('houseOfStocks_lastMarketDataTimestamp')
+      if (savedTimestamp) {
+        setLastUpdateTime(new Date(savedTimestamp))
+      }
+    } else {
+      // Only use fallback data if no saved data exists
+      setStockData(fallbackStockData)
       setIsLoading(false)
     }
 
@@ -87,7 +91,7 @@ export function StockTicker() {
               </>
             )}
             <span className="text-xs text-slate-500 hidden md:inline font-medium">
-              Updated {formatLastUpdate(lastUpdateTime)}
+              {lastUpdateTime ? `Updated ${formatLastUpdate(lastUpdateTime)}` : 'Waiting for data...'}
             </span>
           </div>
         </div>

@@ -16,6 +16,10 @@ export interface WebSocketMessage {
   message?: string;
 }
 
+// LocalStorage key for persisting stock data
+const STOCK_DATA_STORAGE_KEY = 'houseOfStocks_lastMarketData';
+const STOCK_DATA_TIMESTAMP_KEY = 'houseOfStocks_lastMarketDataTimestamp';
+
 class StockDataService {
   private ws: WebSocket | null = null;
   private listeners: Set<(data: StockData[]) => void> = new Set();
@@ -29,7 +33,43 @@ class StockDataService {
   constructor() {
     // Only connect if we're in the browser
     if (typeof window !== 'undefined') {
+      // Load saved data from localStorage first
+      this.loadSavedData();
       this.connect();
+    }
+  }
+
+  // Load previously saved market data from localStorage
+  private loadSavedData() {
+    try {
+      const savedData = localStorage.getItem(STOCK_DATA_STORAGE_KEY);
+      const savedTimestamp = localStorage.getItem(STOCK_DATA_TIMESTAMP_KEY);
+      
+      if (savedData) {
+        const stockArray: StockData[] = JSON.parse(savedData);
+        stockArray.forEach(stock => {
+          this.stockData.set(stock.symbol, stock);
+        });
+        
+        const timestamp = savedTimestamp ? new Date(savedTimestamp).toLocaleString() : 'unknown';
+        console.log(`📦 Loaded ${stockArray.length} stocks from cache (saved at ${timestamp})`);
+      }
+    } catch (error) {
+      console.error('❌ Error loading saved stock data:', error);
+    }
+  }
+
+  // Save current market data to localStorage
+  private saveDataToLocalStorage() {
+    try {
+      const stockArray = Array.from(this.stockData.values());
+      if (stockArray.length > 0) {
+        localStorage.setItem(STOCK_DATA_STORAGE_KEY, JSON.stringify(stockArray));
+        localStorage.setItem(STOCK_DATA_TIMESTAMP_KEY, new Date().toISOString());
+        console.log(`💾 Saved ${stockArray.length} stocks to cache`);
+      }
+    } catch (error) {
+      console.error('❌ Error saving stock data to localStorage:', error);
     }
   }
 
@@ -101,6 +141,7 @@ class StockDataService {
           message.data.forEach(stock => {
             this.stockData.set(stock.symbol, stock);
           });
+          this.saveDataToLocalStorage(); // Save to localStorage
           this.notifyListeners();
         }
         break;
@@ -108,6 +149,7 @@ class StockDataService {
       case 'stock_update':
         if (message.data && !Array.isArray(message.data)) {
           this.stockData.set(message.data.symbol, message.data);
+          this.saveDataToLocalStorage(); // Save to localStorage
           this.notifyListeners();
         }
         break;
