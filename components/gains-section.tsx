@@ -208,7 +208,7 @@ export function GainsSection() {
                 </div>
                 
                 <blockquote className="text-slate-600 italic leading-relaxed font-medium">
-                  "{story.quote}"
+                  &ldquo;{story.quote}&rdquo;
                 </blockquote>
               </div>
             ))}
