@@ -1,6 +1,7 @@
 import { Navbar01 } from '@/components/ui/shadcn-io/navbar-01'
 import { HeroSection } from "@/components/hero-section"
 import { StockTicker } from "@/components/stock-ticker"
+import { GainsSection } from "@/components/gains-section"
 import { CommunityHighlights } from "@/components/community-highlights"
 import { CommunityStories } from "@/components/community-stories"
 import { Footer } from "@/components/footer"
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="pt-16">
         <HeroSection />
         <StockTicker />
+        <GainsSection />
         <CommunityHighlights />
         <CommunityStories />
       </main>
