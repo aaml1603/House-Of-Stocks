@@ -29,12 +29,12 @@ export function OptionsTraders() {
             {/* Description */}
             <div className="space-y-4">
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                Options trading isn't just about making money—it's about strategy, timing, and community support. 
+                Options trading isn&apos;t just about making money—it&apos;s about strategy, timing, and community support. 
                 Join fellow options traders who understand the thrill of a perfectly timed play and the discipline 
                 it takes to succeed.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                Whether you're trading calls, puts, spreads, or iron condors, our community has traders at every 
+                Whether you&apos;re trading calls, puts, spreads, or iron condors, our community has traders at every 
                 level sharing insights, strategies, and real-time analysis.
               </p>
             </div>

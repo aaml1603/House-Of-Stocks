@@ -2,6 +2,7 @@
 
 import { Star } from "lucide-react"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 const testimonials = [
   {
@@ -48,9 +49,11 @@ export function TestimonialsSection() {
             >
               <CardHeader>
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={56}
+                    height={56}
                     className="w-14 h-14 rounded-full mr-4"
                   />
                   <div>
