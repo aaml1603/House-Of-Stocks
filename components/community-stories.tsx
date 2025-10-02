@@ -1,6 +1,8 @@
 "use client"
 
 import { MessageCircle, Heart, Smile, Shield, Sprout, GraduationCap, Users, Globe, Building, TrendingUp, Target, BookOpen, Trophy, Coffee } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 
 const visionPoints = [
   {
@@ -91,23 +93,21 @@ export function CommunityStories() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {visionPoints.map((point, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
-            >
-              <div className="flex items-start mb-4">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                  <point.icon className="h-6 w-6 text-green-600" />
+            <Card key={index} className="hover:shadow-md transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <point.icon className="h-6 w-6 text-green-600" />
+                  </div>
+                  <CardTitle className="text-lg">{point.title}</CardTitle>
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-semibold text-gray-900 text-lg mb-2">{point.title}</h4>
-                </div>
-              </div>
-              
-              <p className="text-gray-700 leading-relaxed">
-                {point.content}
-              </p>
-            </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 leading-relaxed">
+                  {point.content}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
@@ -126,41 +126,41 @@ export function CommunityStories() {
             {plannedChannels.map((channel, index) => {
               const Icon = channel.icon
               return (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors duration-200"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                        <Icon className="h-4 w-4 text-green-600" />
+                <Card key={index} className="bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                          <Icon className="h-4 w-4 text-green-600" />
+                        </div>
+                        <CardTitle className="text-lg">{channel.name}</CardTitle>
                       </div>
-                      <h4 className="font-semibold text-gray-900 text-lg">
-                        {channel.name}
-                      </h4>
+                      <span className="text-sm text-green-600 bg-green-50 px-2 py-1 rounded">
+                        {channel.status}
+                      </span>
                     </div>
-                    <span className="text-sm text-green-600 bg-green-50 px-2 py-1 rounded">
-                      {channel.status}
-                    </span>
-                  </div>
-                  <p className="text-gray-600">
-                    {channel.description}
-                  </p>
-                </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      {channel.description}
+                    </p>
+                  </CardContent>
+                </Card>
               )
             })}
           </div>
 
           <div className="text-center mt-12">
-            <a
-              href="https://discord.gg/z6FA8DHf53"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 text-lg"
+            <Button
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 text-white"
+              asChild
             >
-              <MessageCircle className="h-5 w-5" />
-              Help Us Build This Community
-            </a>
+              <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
+                <MessageCircle />
+                Help Us Build This Community
+              </a>
+            </Button>
           </div>
         </div>
       </div>

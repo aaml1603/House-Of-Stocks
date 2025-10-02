@@ -2,6 +2,8 @@
 
 import { TrendingUp, DollarSign, Target, Award, BarChart3, Zap } from "lucide-react"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 
 const gainStats = [
   {
@@ -74,23 +76,25 @@ export function GainsSection() {
           {gainStats.map((stat, index) => {
             const Icon = stat.icon
             return (
-              <div
+              <Card
                 key={index}
-                className="group bg-white rounded-3xl p-8 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 border border-slate-200/60 text-center hover:-translate-y-2"
+                className="group rounded-3xl hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:from-emerald-200 group-hover:to-green-200 transition-all duration-300 shadow-sm">
-                  <Icon className="h-8 w-8 text-emerald-600" />
-                </div>
-                <div className="text-3xl font-bold text-slate-900 mb-2 tracking-[-0.02em]">
-                  {stat.value}
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-3 tracking-[-0.01em]">
-                  {stat.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                  {stat.description}
-                </p>
-              </div>
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:from-emerald-200 group-hover:to-green-200 transition-all duration-300 shadow-sm">
+                    <Icon className="h-8 w-8 text-emerald-600" />
+                  </div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2 tracking-[-0.02em]">
+                    {stat.value}
+                  </div>
+                  <CardTitle className="text-lg tracking-[-0.01em]">{stat.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm leading-relaxed font-medium">
+                    {stat.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
             )
           })}
         </div>
@@ -184,33 +188,34 @@ export function GainsSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {successStories.map((story, index) => (
-              <div
+              <Card
                 key={index}
-                className="group bg-white rounded-3xl p-8 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 border border-slate-200/60 hover:-translate-y-2"
+                className="group rounded-3xl hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <div className="text-2xl font-bold text-emerald-600 mb-1">
-                      {story.gain}
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-2xl font-bold text-emerald-600 mb-1">
+                        {story.gain}
+                      </div>
+                      <div className="text-sm text-slate-500 font-medium">
+                        in {story.timeframe}
+                      </div>
                     </div>
-                    <div className="text-sm text-slate-500 font-medium">
-                      in {story.timeframe}
+                    <div className="text-right">
+                      <CardTitle className="text-lg">{story.name}</CardTitle>
+                      <div className="text-sm text-slate-500 font-medium">
+                        {story.strategy}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-lg font-semibold text-slate-900">
-                      {story.name}
-                    </div>
-                    <div className="text-sm text-slate-500 font-medium">
-                      {story.strategy}
-                    </div>
-                  </div>
-                </div>
-                
-                <blockquote className="text-slate-600 italic leading-relaxed font-medium">
-                  &ldquo;{story.quote}&rdquo;
-                </blockquote>
-              </div>
+                </CardHeader>
+                <CardContent>
+                  <blockquote className="text-slate-600 italic leading-relaxed font-medium">
+                    &ldquo;{story.quote}&rdquo;
+                  </blockquote>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -230,15 +235,16 @@ export function GainsSection() {
                 Join our community and learn from traders who are actually making money. 
                 No fake promises, just real results and genuine support.
               </p>
-              <a
-                href="https://discord.gg/z6FA8DHf53"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-white text-emerald-600 px-10 py-5 rounded-xl font-semibold hover:bg-slate-50 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1"
+              <Button
+                size="lg"
+                className="group bg-white text-emerald-600 hover:bg-slate-50"
+                asChild
               >
-                <DollarSign className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
-                Start Your Journey
-              </a>
+                <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
+                  <DollarSign className="group-hover:scale-110 transition-transform duration-200" />
+                  Start Your Journey
+                </a>
+              </Button>
             </div>
           </div>
         </div>

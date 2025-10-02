@@ -94,9 +94,9 @@ export function HeroSection() {
                   <Image
                     src="/trading_phone.png"
                     alt="Trading App Mockup"
-                    width={400}
-                    height={600}
-                    className="w-auto h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg drop-shadow-2xl rounded-3xl"
+                    width={1200}
+                    height={1800}
+                    className="w-auto h-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl drop-shadow-2xl rounded-3xl"
                     priority
                   />
                 </div>

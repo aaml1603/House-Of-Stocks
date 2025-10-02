@@ -1,6 +1,8 @@
 "use client"
 
 import { Users, MessageCircle, TrendingUp, Heart, Coffee, BookOpen, Sprout, Handshake, Lightbulb, Gift, Bell } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 
 const highlights = [
   {
@@ -51,20 +53,24 @@ export function CommunityHighlights() {
           {highlights.map((highlight, index) => {
             const Icon = highlight.icon
             return (
-              <div
+              <Card
                 key={index}
-                className="group bg-white rounded-3xl p-8 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 border border-slate-200/60 text-center hover:-translate-y-2"
+                className="group rounded-3xl hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 text-center hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:from-emerald-200 group-hover:to-green-200 transition-all duration-300 shadow-sm">
-                  <Icon className="h-8 w-8 text-emerald-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-[-0.01em]">
-                  {highlight.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed font-medium">
-                  {highlight.description}
-                </p>
-              </div>
+                <CardHeader>
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:from-emerald-200 group-hover:to-green-200 transition-all duration-300 shadow-sm">
+                    <Icon className="h-8 w-8 text-emerald-600" />
+                  </div>
+                  <CardTitle className="text-xl tracking-[-0.01em]">
+                    {highlight.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-600 leading-relaxed font-medium">
+                    {highlight.description}
+                  </p>
+                </CardContent>
+              </Card>
             )
           })}
         </div>
@@ -115,15 +121,16 @@ export function CommunityHighlights() {
                 We&apos;re just getting started and looking for genuine people who want to build something special together.
                 Join us on Discord and help shape what this community becomes!
               </p>
-              <a
-                href="https://discord.gg/z6FA8DHf53"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-white text-emerald-600 px-10 py-5 rounded-xl font-semibold hover:bg-slate-50 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1"
+              <Button
+                size="lg"
+                className="group bg-white text-emerald-600 hover:bg-slate-50"
+                asChild
               >
-                <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
-                Join Our Discord
-              </a>
+                <a href="https://discord.gg/z6FA8DHf53" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="group-hover:scale-110 transition-transform duration-200" />
+                  Join Our Discord
+                </a>
+              </Button>
             </div>
           </div>
         </div>
